@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ * @author Mangos
+ * @date 2024-12-04
+ * @brief main file for testing deque
+ * 
+ * deque 
+ */
+
 #include <iostream>
 #include <stdexcept>
 #include <cstdlib>
@@ -5,6 +14,15 @@
 
 using namespace std;
 
+
+/**
+ * main function for deque
+ *
+ * @pre deque.h exists
+ * @return int 
+ * @post menu is printed
+ * 
+ */
 int main() {
     // Perform test based on the user input
     int choice;
