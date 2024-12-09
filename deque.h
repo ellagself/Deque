@@ -129,10 +129,15 @@ template <typename T>
  */
 void Deque<T>::push_front(const T& value) {
     cout << "Pushing to front: " << value << endl;
-
+    if (deque_size == block_capacity * block_size) {
+      expand_blockmap();
+    }
+    
     // front_index reaches the start, expand the blockmap
     if (front_index == 0) {
-        expand_blockmap();
+      front_index = block_capacity - 1;
+    } else {
+      --front_index;
     }
 
     // allocate new block if necessary 
@@ -140,6 +145,10 @@ void Deque<T>::push_front(const T& value) {
         blockmap[front_index] = new T[block_size];
         cout << "Allocated block at front_index: " << front_index << endl;
     }
+
+    size_t offset = (deque_size == 0) ? 0 : deque_size % block_size;
+    blockmap[front_index][offset] = value;
+    ++deque_size;
 
     // insert value at the front
     blockmap[front_index][deque_size % block_size] = value;
