@@ -1,3 +1,9 @@
+# file Makefile
+# author Mangos
+# date 2024-12-04
+# brief Makefile
+
+
 CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++17
 
