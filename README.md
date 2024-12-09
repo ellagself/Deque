@@ -9,5 +9,4 @@ This project implements a custom deque container using a dynamic double array st
 - Check size and emptiness with `size` and `empty`.
 
 
-Errors: Segmentation fault when running option 1 on the menu, displays each step as it runs.
-	Test 3 is not able to access the memory locations of the items in the deque.
+Errors: Test 3 is not able to access all memory locations of the items in the deque.
